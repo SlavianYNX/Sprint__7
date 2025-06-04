@@ -7,7 +7,6 @@ from data import TestMessages
 
 class TestLoginMethods:
 
-
     @allure.title('Проверка авторизации и получение id курьера')
     @allure.description('Отправка запроса на авторизацию существующего курьера и получение его id. Удаление курьера из базы')
     def test_login_get_courier_id(self, courier):
@@ -23,7 +22,6 @@ class TestLoginMethods:
         courier['password'] = ""
         r = ApiMethods.login_courier(courier['login'], courier['password'])
         assert r.status_code == 400 and r.json()== TestMessages.COURIER_NOT_ENOUGH_AUTHORIZATION_DATA
-
 
     @allure.title('Проверка авторизации с несуществующим паролем')
     @allure.description('Отправка запроса на авторизацию под несуществующим паролем')
