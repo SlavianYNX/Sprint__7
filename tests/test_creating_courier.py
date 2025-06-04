@@ -15,7 +15,6 @@ class TestCourierMethods:
         p = ApiMethods.login_courier(courier['login'], courier['password'])
         ApiMethods.delete_courier(p.json()['id'])
 
-
     @allure.title('Проверка получения сообщения об ошибке при создания двух одинаковых курьеров')
     @allure.description('Отправка запроса на создание двух курьеров с одинаковыми логинами, получение сообщения об ошибке')
     def test_two_creating_courier(self, courier):
