@@ -1,6 +1,6 @@
 import pytest
 import allure
-from conftest import courier
+from conftest import courier, create_courier
 from methods_api import ApiMethods
 from data import TestMessages
 
@@ -9,8 +9,7 @@ class TestLoginMethods:
 
     @allure.title('Проверка авторизации и получение id курьера')
     @allure.description('Отправка запроса на авторизацию существующего курьера и получение его id. Удаление курьера из базы')
-    def test_login_get_courier_id(self, courier):
-        ApiMethods.create_courier(courier)
+    def test_login_get_courier_id(self, courier, create_courier):
         r = ApiMethods.login_courier(courier['login'], courier['password'])
         p = ApiMethods.delete_courier(r.json()['id'])
         assert r.status_code == 200 and 'id' in r.json()
