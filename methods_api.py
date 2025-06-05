@@ -43,4 +43,4 @@ class ApiMethods:
     @staticmethod
     @allure.step('Отмена заказа')
     def cancellation_order(track):
-        return requests.put(f'{Urls.CANCEL_ORDER}', json={"track": track})
+        return requests.put(f'{Urls.CANCEL_ORDER}', json={'track': track})
