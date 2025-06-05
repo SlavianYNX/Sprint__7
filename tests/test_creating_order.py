@@ -14,8 +14,6 @@ class TestOrderMethods:
         data.order_["color"] = color
         r = ApiMethods.order_create(data.order_)
         assert r.status_code == 201 and 'track' in r.json()
-        ApiMethods.cancellation_order(r.json()['track'])
-
 
 
 
