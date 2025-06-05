@@ -14,6 +14,7 @@ class TestMessages:
     ORDER_ACCEPT_NOT_COURIER = {"code": 404, "message": "Курьера с таким id не существует"}
     ORDER_ACCEPT_NOT_ID = {"code": 400, "message": "Недостаточно данных для поиска"}
     ORDER_ACCEPT_OK = {'ok': True}
+    ORDER_CANCEL = {'ok': True}
 
 
 order_ = {
