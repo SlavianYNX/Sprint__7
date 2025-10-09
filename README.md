@@ -8,3 +8,12 @@
 Создание заказа
 
 Получение списка заказов
+
+Перед работой с репозиторием требуется установить зависимости
+pip install -r requirements.txt
+
+Запустить все тесты
+pytest tests --alluredir=allure_results
+
+Посмотреть отчет о тестировании
+allure serve allure_results
